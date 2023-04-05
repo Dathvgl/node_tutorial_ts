@@ -20,7 +20,6 @@ const zing_1 = __importDefault(require("./routes/zing"));
 const app = (0, express_1.default)();
 const port = Number(process.env.PORT) || 8080;
 app.use((0, cors_1.default)());
-app.use("/.netlify/functions/index");
 app.use("/zing", zing_1.default);
 app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.send("Hello from ts app");
