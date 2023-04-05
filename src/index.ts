@@ -10,6 +10,7 @@ const app = express();
 const port: number = Number(process.env.PORT) || 8080;
 
 app.use(cors());
+app.use("/.netlify/functions/index");
 
 app.use("/zing", ZingRoute);
 
@@ -21,4 +22,4 @@ const server = app.listen(port, () => {
   console.log(`Ứng dụng: http://localhost:${port}/`);
 });
 
-export default serverless(app);
+export const handler = serverless(app);

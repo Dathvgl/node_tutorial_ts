@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.handler = void 0;
 const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = require("dotenv");
 const express_1 = __importDefault(require("express"));
@@ -21,6 +22,7 @@ const zing_1 = __importDefault(require("./routes/zing"));
 const app = (0, express_1.default)();
 const port = Number(process.env.PORT) || 8080;
 app.use((0, cors_1.default)());
+app.use("/.netlify/functions/index");
 app.use("/zing", zing_1.default);
 app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.send("Hello from ts app");
@@ -28,4 +30,4 @@ app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 const server = app.listen(port, () => {
     console.log(`Ứng dụng: http://localhost:${port}/`);
 });
-exports.default = (0, serverless_http_1.default)(app);
+exports.handler = (0, serverless_http_1.default)(app);
