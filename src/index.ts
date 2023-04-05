@@ -1,7 +1,6 @@
 import cors from "cors";
 import { config } from "dotenv";
 import express from "express";
-import "object-assign";
 import serverless from "serverless-http";
 import ZingRoute from "./routes/zing";
 
