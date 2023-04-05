@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = require("dotenv");
 const express_1 = __importDefault(require("express"));
+require("object-assign");
 const serverless_http_1 = __importDefault(require("serverless-http"));
 const zing_1 = __importDefault(require("./routes/zing"));
 (0, dotenv_1.config)();
