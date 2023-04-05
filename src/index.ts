@@ -1,7 +1,6 @@
 import cors from "cors";
 import { config } from "dotenv";
 import express from "express";
-import serverless from "serverless-http";
 import ZingRoute from "./routes/zing";
 
 config();
@@ -21,5 +20,3 @@ app.get("/", async (req, res) => {
 const server = app.listen(port, () => {
   console.log(`Ứng dụng: http://localhost:${port}/`);
 });
-
-export const handler = serverless(app);
