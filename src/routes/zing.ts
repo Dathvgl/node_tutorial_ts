@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/song/:id", async (req, res) => {
   const { id } = req.params;
   const data: unknown = await ZingMp3.getSong(id);
-  res.send(JSON.stringify(data));
+  res.json(data);
 });
 
 router.get("/detail-playlist/:id", (req, res) => {
@@ -21,17 +21,17 @@ router.get("/detail-playlist/:id", (req, res) => {
 
 router.get("/home", async (req, res) => {
   const data: unknown = await ZingMp3.getHome();
-  res.send(JSON.stringify(data));
+  res.json(data);
 });
 
 router.get("/top100", async (req, res) => {
   const data: unknown = await ZingMp3.getTop100();
-  res.send(JSON.stringify(data));
+  res.json(data);
 });
 
 router.get("/chart-home", async (req, res) => {
   const data: unknown = await ZingMp3.getChartHome();
-  res.send(JSON.stringify(data));
+  res.json(data);
 });
 
 router.get("/new-release-chart", (req, res) => {
@@ -45,7 +45,7 @@ router.get("/new-release-chart", (req, res) => {
 router.get("/info-song/:id", async (req, res) => {
   const { id } = req.params;
   const data: unknown = await ZingMp3.getInfoSong(id);
-  res.send(JSON.stringify(data));
+  res.json(data);
 });
 
 router.get("/artist/:id", (req, res) => {
@@ -82,7 +82,7 @@ router.get("/search/:name", async (req, res) => {
   const { name } = req.params;
 
   const data: unknown = await ZingMp3.search(name);
-  res.send(JSON.stringify(data));
+  res.json(data);
 });
 
 router.get("/list-mv/:id", (req, res) => {
